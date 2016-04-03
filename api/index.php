@@ -5,9 +5,9 @@ $c = new \Slim\Container();
 $c['foundHandler'] = function() {
     return new \Slim\Handlers\Strategies\RequestResponseArgs();
 };
+
 $app = new \Slim\App($c);
 $app->get('/users', 'getUsers');
-
 $app->get('/users/{email}', function ($request, $response, $email) {
    $sql = "SELECT * FROM customer WHERE email=:email"; 
    try {
@@ -23,11 +23,8 @@ $app->get('/users/{email}', function ($request, $response, $email) {
      echo '{"error":{"text":'. $e->getMessage() .'}}';
    } 
 });
-
 $app->post('/users', function ($request, $response){
-  
-
-});
+ });
 $app->run();
 
 function getUsers() {
