@@ -58,9 +58,6 @@ myapp.run(function($rootScope, $state){
             var greeting = toState.data.customData1 + " " + toState.data.customData2;
             console.log(greeting);
         }
-       // else if (toState.url === '/user') {
-            
-       // }
     })       
 })
   
